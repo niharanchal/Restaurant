@@ -1,0 +1,499 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    outline: none;
+    border: none;
+    transition: .2s linear;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 144px;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: 8px;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 80px;
+}
+body{
+    background-color: black;
+    overflow-x: hidden;
+}
+.header{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 7%;
+    border-bottom: 3.2px solid #ffc107;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.header .logo img{
+    max-width: 75px;
+}
+.header .navbar a{
+    margin: 0 16px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+.header .navbar a:hover{
+    color: #ffc107;
+    border-bottom: 1.6px solid #ffc107;
+    padding-bottom: 5px;
+}
+.header .icons i{
+    color: #fff;
+    cursor: pointer;
+    font-size: 25px;
+    margin-left: 10px;
+}
+.header .icons i:hover{
+    color: #ffc107;
+}
+#menu-btn{
+    display: none;
+}
+.header .search-form{
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background-color: #fff;
+    width: 600px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+.header .search-form.active{
+    transform: scaleY(1);
+}
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    color: #13131a;
+    padding: 15px;
+    text-transform: none;
+}
+.header .search-form label{
+    cursor: pointer;
+    font-size: 25px;
+    margin-right: 18px;
+    color: #13131a;
+}
+.header .search-form label:hover{
+    color: #ffc107;
+}
+.header .cart-item-container{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: calc(100vh - 9.5rem);
+    width: 400px;
+    background-color: #fff;
+    padding: 0 24px;
+}
+.header .cart-item-container.active{
+    right: 0;
+}
+.header .cart-item-container .cart-item{
+    position: relative;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.header .cart-item-container .cart-item .times-icon{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #13131a;
+}
+.header .cart-item-container .cart-item .times-icon:hover{
+    color: #ffc107;
+}
+.header .cart-item-container .cart-item img{
+    height: 7rem;
+}
+.header .cart-item-container .cart-item .content h3{
+    font-size: 2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #13131a;
+    padding-bottom: 0.5rem;
+}
+.header .cart-item-container .cart-item .content .price{
+    font-size: 1.5rem;
+    color: #ffc107;
+}
+.header .cart-item-container a button{
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    background-color: #ffc107;
+    color: #13131a;
+    cursor: pointer;
+    
+}
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(0 0 0 / 90%) , rgb(68 68 68 / 35%)),url(../src/components/assets/pizza.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.home .content{
+    max-width: 60rem;
+    margin: 0px 80px;
+}
+.home h3{
+    color: #eee;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.home span{
+    color: #ffc107;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.home .content p{
+    font-size: 1.8rem;
+    font-weight: lighter;
+    line-height: 1.5;
+    padding: 1px 0;
+    color: #eee;
+
+}
+.home .content a button{
+    font-size: 15px;
+    background-color: #ffc107;
+    padding: 5px 15px;
+    cursor: pointer;
+    /* color: #fff; */
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    color: #eee;
+    margin: 20px 0px;
+}
+.heading span{
+    color: #ffc107;
+    margin-right: 5px;
+}
+.about{
+    margin: 8px 100px;
+}
+.about .row{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    background-color: #13131a;
+    /* flex-wrap: wrap; */
+}
+.about .row .image{
+    flex: 1 1 45rem;
+}
+.about .row .image img{
+    width: 100%;
+    
+}
+.about .row .content{
+    
+    padding: 2px 20px;
+    width: 50%;
+}
+.about .row .content h3{
+    font-size: 3rem;
+    color: #fff;
+}
+.about .row .content p{
+    font-size: 1.6rem;
+    color: #ccc;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+.about .row .content a button{
+    font-size: 16px;
+    background-color: #ffc107;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* color: #fff; */
+    padding: 1.5px 10px;
+    cursor: pointer;
+}
+.box-container{
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(35rem , 1fr)); */
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+}
+.menu .box-container .box{
+    padding: 5rem;
+    text-align: center;
+    border: 0.2rem solid #ffc107;
+} 
+.menu .box-container .box img{
+    height: 10rem;
+    font-size: 2rem;
+    padding:  1rem 0;
+}
+.menu .box-container .box h3{
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.menu .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+.menu .box-container .box .price span{
+    font-size: 2rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+.menu .box-container .box:hover{
+    background-color: #443300;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.menu .box-container .box a button{
+    background-color: #ffc107;
+    padding: 2.5px 15px;
+    cursor: pointer;
+}
+.products .box-container .box{
+    text-align: center;
+    border: 0.2rem solid #ffc107;
+    padding: -8px 0;
+}
+.products .box-container .box .icon a  i{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    border: 0.2rem solid #ffc107;
+    color: #fff;
+    margin: 0.3rem;
+}
+.products .box-container .box .icon a  i:hover{
+    color: #000;
+    background-color: #ffc107;
+}
+.products .box-container .box .image{
+    padding: 2.5rem 0;
+}
+.products .box-container .box .image img{
+    height: 25rem;
+}
+.products .box-container .box .content h3{
+    color: #fff;
+    font-size: 2.5rem;
+}
+.products .box-container .box .content .stars i{
+    color: #ffc107;
+    font-size: 1.7rem;
+}
+.products .box-container .box .content .price{
+    color: #fff;
+    font-size: 2.5rem;
+}
+.products .box-container .box .content .price span{
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1.5rem;
+}
+.review .box-containers{
+    display: flex;
+    margin: 0 15px;
+    justify-content: space-between;
+    gap: 15px;
+    /* justify-content: space-evenly; */
+    
+}
+.review .box-containers .box{
+    border: 0.2rem solid #ffc107;
+    text-align: center;
+    padding: .5rem 2rem;
+}
+.review .box-containers .box p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #ccc;
+    padding: 2rem 0;
+}
+.review .box-containers .box .user{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.review .box-containers .box h3{
+    font-size: 2.5rem;
+    color: #fff;
+}
+.review .box-containers .box .stars i{
+    font-size: 1.5rem;
+    color: #ffc107;
+}
+.contact .row{
+    display: flex;
+    background-color: #13131a;
+    /* flex-wrap: wrap; */
+    gap: 1rem;
+    margin: 0 120px;
+}
+.contact .row .map{
+    /* flex: 1 1 45rem; */
+    width: 50%;
+    object-fit: cover;
+}
+.contact .row .map img{
+    width: 100%;
+}
+.contact .row form{
+    padding: 5rem 2rem;
+    text-align: center;
+    flex: 1 1 45rem;
+}
+.contact .row form h3{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #fff;
+}
+.contact .row form .inputbox{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: #13131a;
+    border: 0.2rem solid #ffc107;
+}
+.contact .row form .inputbox input{
+    background-color: #13131a;
+    margin: 8px 0;
+    color: #fff;
+    padding: 0 8px;
+}
+.contact .row form button{
+    font-size: 16px;
+    background-color: #ffc107;
+    padding: 1.5px 10px;
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.footer .share{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.footer .share .circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: grid;
+    place-items: center;
+}
+.footer .share a{
+    color: #fff;
+    font-size: 15px;
+      
+}
+.footer .share .circle:hover{
+    background-color: #443300;
+}
+
+.footer .links{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.footer .links a{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #ffc107;
+    padding: 5px 10px;
+}
+.footer .links a:hover{
+    background-color: #443300;
+}
+.footer .credit{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}
+.footer .credit span{
+    color: #ffc107;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width:768px) {
+    #menu-btn{
+        display: inline-block;
+    }
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #000;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+    .header .navbar.active{
+        right: 0;
+    }
+    .header .navbar a{
+        color: #fff;
+        display: block;
+        margin: 1.5rem;
+    }
+    .header .navbar a:hover{
+        color: #ffc107;
+    }
+}
